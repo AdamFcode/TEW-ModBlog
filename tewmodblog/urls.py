@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from modblog.views import my_modblog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('modblog/', my_modblog, name='modblog'),
 ]
