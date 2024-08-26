@@ -38,3 +38,37 @@ class Post(models.Model):
     """
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+class Comment(models.Model):
+    """
+    The Comment model allows users to leave a comment on a Blog Post
+    It captures the users name and provides a trxt field for the comment
+    It also allows the user to name their favourite Mod
+    Admin have the ability to approve or remove any unsuitable comments
+    The date and time of the comment are also captured and displayed
+    """
+    post = models.ForeignKey(
+        Post, 
+        on_delete=models.CASCADE, 
+        related_name="comments")
+    author = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        related_name="commenter")
+    favourite_mod = models.CharField(max_length=100)
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    """
+    The Meta class orders the comments on the page
+    """
+    class Meta:
+        ordering = ["created_on"]
+
+    """
+    The __str__ method allows the comments to be read with an indication of content
+    """
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
