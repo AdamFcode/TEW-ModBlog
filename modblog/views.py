@@ -10,5 +10,5 @@ class PostList(generic.ListView):
     Paginate by decides the number of posts per page
     """
     queryset = Post.objects.filter(status=1)
-    template_name = "post_list.html"
+    template_name = "modblog/index.html"
     paginate_by = 4
