@@ -1,5 +1,32 @@
-{% extends 'base.html' %} {% block post %}
+{% extends 'base.html' %} {% block modpost %}
 {% load static %}
 
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="d-none d-md-block col-md-6">
+                <img src="{% static 'images/no_backdrop.jpg' %}" alt="placeholder">
+            </div>
+            <div class="col-md-6 masthead-text">
+                <h1>{{ post.title }}</h1>
+                <p>Author: {{ post.author }}</p>
+                <p>Mod-Maker: {{ post.mod_maker }}</p>
+                <p>{{ post.created_on}}</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-{% endblock post %}
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div>
+                <p>
+                    {{ post.content | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock modpost %}
