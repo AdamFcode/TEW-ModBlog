@@ -1,7 +1,7 @@
 {% load static %}
 
 {% url 'home' as home_url %}
-{% url 'link' as link_url %}
+{% url 'links' as link_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +21,14 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                    <li role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a class= "{% if request.path == home_url %}active{% endif %}"
+                        aria-current="page" href="{% url 'home' %}">>Home</a></li>
+                    <li role="presentation"><a class= "{% if request.path == link_url %}active{% endif %}"
+                        aria-current="page" href="{% url 'links' %}">Links</a></li>
                     <li role="presentation"><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <a href="{% url 'home' %}">TEW IX ModBlog</a>
+            <a>TEW IX ModBlog</a>
         </div>
 
         <div class="jumbotron">

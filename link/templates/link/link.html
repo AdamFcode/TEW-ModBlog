@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
-{% block modpost %}
 {% load static %}
 
+{% block modpost %}
 <div class="container mt-5">
     <div class="row">
         <div class="col-4 text-center">
             <img src="" width="" />
         </div>
+        {% for links in Link %}
         <div class="col-8">
             <!-- Title goes between these h2 tags -->
-            <h2>{{ link.title }}</h2>
+            <h2>{{ link.title }} Hello</h2>
             <!-- URL goes between these h3 tags-->
             <h3> {{ link.site_url }}</h3>
             <!-- Content goes directly underneath this -->
             {{ link.content | safe }}
+            {% if forloop.counter|divisibleby:4 %}
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 
-{% endblock modpost %} 
+{% endblock modpost %}

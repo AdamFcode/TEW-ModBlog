@@ -2,14 +2,14 @@ from django.shortcuts import render
 from .models import Link
 
 
-def link(request):
+def link_list(request):
     """
     Renders the Link page
     """
-    link = Link.objects.all()
+    link_list = Link.objects.all()
 
     return render(
         request,
         "link/link.html",
-        {"link": link},
+        {"links": Link},
     )
