@@ -9,13 +9,15 @@
         </div>
         {% for links in Link %}
         <div class="col-8">
+            <a href="{% url 'link' link.html %}">
             <!-- Title goes between these h2 tags -->
-            <h2>{{ link.title }} Hello</h2>
+            <h2>{{ link.title }} </h2>
             <!-- URL goes between these h3 tags-->
             <h3> {{ link.site_url }}</h3>
             <!-- Content goes directly underneath this -->
             {{ link.content | safe }}
             {% if forloop.counter|divisibleby:4 %}
+            </a>
         </div>
         {% endif %}
         {% endfor %}
