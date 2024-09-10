@@ -1,26 +1,25 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% block modpost %}
 {% load static %}
 
-{% block modpost %}
 <div class="container mt-5">
     <div class="row">
         <div class="col-4 text-center">
             <img src="" width="" />
         </div>
-        {% for links in Link %}
         <div class="col-8">
-            <a href="{% url 'link' link.html %}">
-            <!-- Title goes between these h2 tags -->
-            <h2>{{ link.title }} </h2>
+            <h1>The following is a list of links for various resources for modding.
+                <hr>
+                Please refer to Admins blog posts for site rules regarding links.
+            </h1>
+            {% for link in link %}
             <!-- URL goes between these h3 tags-->
-            <h3> {{ link.site_url }}</h3>
+            <h2> <a href="{{ link.site_url}}">{{ link.title }}</a></h2>
+            <hr>
             <!-- Content goes directly underneath this -->
             {{ link.content | safe }}
-            {% if forloop.counter|divisibleby:4 %}
-            </a>
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
 </div>
 
