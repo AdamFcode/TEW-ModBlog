@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block modpost %}
 {% load static %}
 
@@ -8,13 +8,12 @@
             <img src="" width="" />
         </div>
         <div class="col-8">
-            <h1>The following is a list of links for various resources for modding.
-                <hr>
-                Please refer to Admins blog posts for site rules regarding links.
+            <h1>Below are several links to relevant, trusted websites. Please refrain from directly linking to these or
+                any other sites in blog posts. Clicking the title will open the website in a new window.
             </h1>
             {% for link in link %}
             <!-- URL goes between these h3 tags-->
-            <h2> <a href="{{ link.site_url}}">{{ link.title }}</a></h2>
+            <h2> <a href="{{ link.site_url}}" target="_blank">{{ link.title }}</a></h2>
             <hr>
             <!-- Content goes directly underneath this -->
             {{ link.content | safe }}
