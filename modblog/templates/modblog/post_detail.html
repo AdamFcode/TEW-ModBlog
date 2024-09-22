@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block modpost %} 
 {% load static %}
+{% load crispy_forms_tags %}
 
 <div class="masthead">
     <div class="container">
@@ -63,6 +64,23 @@
             {% endfor %}
           </div>
         </div>
+
+<!-- Form for posting comments. Prompts login for guest users-->
+    <div class="col-md-4 card mb-4 mt-3">
+      <div>
+        {% if user.is_authenticated %}
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form method="post">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button type="submit">Submit</button>
+        </form>
+        {% else %}
+        <p>Please log in to comment</p>
+        {% endif %}
+      </div>
+    </div>
       </div>
 </div>
 
