@@ -18,11 +18,20 @@ def post_detail(request, slug):
     Queryset selects posts to display.
     Status=1 selects only published posts
     Post grabs available object or returns 404 error if there is none
+    Comments are retrieved and then displayed based on when they were posted
+    Only approved comments are retrieved
     """
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.filter(approved=True).count()
 
     return render(
-        request, "modblog/post_detail.html", {"post": post},
+        request, "modblog/post_detail.html",
+        context={
+        "post": post,
+        "comments": comments,
+        "comment_count": comment_count,} 
     )
+

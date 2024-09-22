@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block modpost %}
+{% extends 'base.html' %} {% block modpost %} 
 {% load static %}
 
 <div class="masthead">
@@ -27,6 +27,43 @@
             </div>
         </div>
     </div>
+
+    <!--Section to display preview of comments with approval status-->
+    <div class="row">
+        <div class="col-12">
+          <strong>
+            <i></i> {{ comment_count }}
+          </strong>
+        </div>
+        <div class="col-12">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+          <h3>Comments:</h3>
+          <div>
+            {% for comment in comments %}
+            <div>>
+              <p>
+                {{ comment.author }}
+                <span>
+                  {{ comment.created_on }}
+                </span> wrote:
+              </p>
+              <div>
+                {{ comment.body | linebreaks }}
+              </div>
+              {% if not comment.approved and comment.author == user %} 
+              <p>
+                Comment approval pending
+              </p>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
 </div>
 
 {% endblock modpost %}
