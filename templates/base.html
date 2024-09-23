@@ -53,6 +53,22 @@
             <p class="lead">Welcome to the Unofficial TEW IX Mod-Blog, a place for TEW enthusiasts to share and discuss
                 current or upcoming mods for the latest release, TEW IX!</p>
         </div>
+
+        <!--Container to display success message for commenting-->
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div role="alert">
+                  {{ message | safe }}
+                  <button type="button"
+                    data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
         <main class="row marketing">
             {% block modpost %}
             <!-- Content Goes here -->
