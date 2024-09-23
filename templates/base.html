@@ -57,17 +57,16 @@
         <!--Container to display success message for commenting-->
         <div class="container">
             <div class="row">
-              <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div role="alert">
-                  {{ message | safe }}
-                  <button type="button"
-                    data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div role="alert">
+                        {{ message | safe }}
+                        <button type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-              </div>
             </div>
-          </div>
+        </div>
 
         <main class="row marketing">
             {% block modpost %}
@@ -79,7 +78,7 @@
             <p>© 2024 AdamFcode</p>
         </footer>
 
-    </div> 
+    </div>
 
     <script src="{% static 'js/script.js' %}"></script>
 </body>
