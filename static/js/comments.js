@@ -1,12 +1,12 @@
 import * as bootstrap from "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js";
-window.bootstrap = bootstrap;
+window.bootstrap = bootstrap;  
 
 const editButtons = document.getElementsByClassName("edit-button");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+const deleteModal = window.$('#deleteModal').modal();
 const deleteButtons = document.getElementsByClassName("delete-button");
 const deleteConfirm = document.getElementById("deleteConfirm");
 

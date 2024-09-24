@@ -53,6 +53,12 @@ body {
   .marketing p + h4 {
     margin-top: 28px;
   }
+
+
+  /* Changes opacity of delete Modal */
+    .fade:not(.show) {
+    opacity: 50;
+}
   
   /* Responsive: Portrait tablets and up */
   @media screen and (min-width: 768px) {
@@ -70,4 +76,6 @@ body {
       border-bottom: 0;
     }
   }
+
+
   
