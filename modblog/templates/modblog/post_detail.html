@@ -100,15 +100,15 @@
         <h5 class="modal-title"
           id="deleteModalLabel">Delete comment?</h5>
         <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
+          data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         This will delete your comment.
         Are you sure you wish to proceed?
       </div>
       <div class="modal-footer">
-        <button id='closeModal' type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
+        <button id="closeModal" type="button" class="btn-secondary"
+          data-dismiss="modal" onclick="modalDismiss()">Close</button>
         <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
       </div>

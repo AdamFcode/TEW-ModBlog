@@ -8,7 +8,10 @@ const submitButton = document.getElementById("submitButton");
 
 const deleteModal = window.$('#deleteModal').modal();
 const deleteButtons = document.getElementsByClassName("delete-button");
+const closeModal = document.getElementById('closeModal');
 const deleteConfirm = document.getElementById("deleteConfirm");
+
+
 
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
