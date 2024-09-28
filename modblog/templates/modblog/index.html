@@ -9,7 +9,7 @@
                 <div class="col-sm-4">
                 <a href="{% url 'post_detail' post.slug %}">
                     <p>Author: {{ post.author }}</p>
-                    <h2>{{ post.title }}</h2>
+                    <h2 style="color:goldenrod !important;">{{ post.title }}</h2>
                     <p>{{ post.excerpt | truncatewords:40 }}</p>
                     <hr />
                     <p>{{ post.created_on}}</p>
