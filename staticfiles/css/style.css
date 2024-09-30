@@ -1,9 +1,20 @@
-/* Space out content a bit */
+/* Space out the content*/
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 100vh;
+    background-color: rgb(44, 44, 48);
+    color: black;
   }
-  
+
+  .header {
+    color: black !important;
+  }
+
+a {
+  color: black;
+}
+
   /* Everything but the jumbotron gets side spacing for mobile first views */
   .header,
   .marketing,
@@ -14,23 +25,39 @@ body {
   
   /* Custom page header */
   .header {
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #e5e5e5;
+    background-color:goldenrod
   }
   .header h3 {
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 40px; /* Make the masthead heading the same height as the navigation */
+    line-height: 40px; 
+  }
+
+  .jumbotron {
+    background-color:goldenrod;
+  }
+
+  .blog-gold {
+    background-color: goldenrod;
+  }
+
+  .blog-goldword {
+    color: goldenrod;
   }
   
+  .blog-blue {
+    color: royalblue;
+  }
   /* Custom page footer */
   .footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+    padding-top: 10px;
+    border-top: 1px solid #020202;
+    background-color:goldenrod;
   }
   
-  /* Customize container */
+  /* Customize container for different screen sizes */
   @media (min-width: 768px) {
     .container {
       max-width: 730px;
@@ -60,14 +87,13 @@ body {
     opacity: 50;
 }
   
-  /* Responsive: Portrait tablets and up */
+  /* Responsivity for larger screens*/
   @media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
     .header,
     .marketing,
     .footer {
-      padding-right: 0;
-      padding-left: 0;
+      padding-right: 35px;
+      padding-left: 35px;
     }
     .header {
       margin-bottom: 30px;
@@ -76,6 +102,21 @@ body {
       border-bottom: 0;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    .marketing {
+      padding-right: 85px;
+      padding-left: 85px;
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    .marketing {
+      padding-right: 170px;
+      padding-left: 170px;
+    }
+  }
+  
 
 
   

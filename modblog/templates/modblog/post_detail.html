@@ -6,17 +6,17 @@
   <div class="container">
     <div class="row g-0">
       <div class="col-md-6 masthead-text">
-        <h1>{{ post.title }}</h1>
-        <p>Author: {{ post.author }}</p>
-        <p>Mod-Maker: {{ post.mod_maker }}</p>
-        <p>{{ post.created_on}}</p>
+        <h1 class="blog-goldword">{{ post.title }}</h1>
+        <p class="blog-goldword">Author: {{ post.author }}</p>
+        <p class="blog-goldword">Mod-Maker: {{ post.mod_maker }}</p>
+        <p class="blog-goldword">{{ post.created_on}}</p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row blog-blue">
     <div class="col card mb-4  mt-3 left  top">
       <div>
         <p>
@@ -27,33 +27,29 @@
   </div>
 
   <!--Section to display preview of comments with approval status-->
-  <div class="row">
-    <div class="col-12">
-      <strong>
-        <i></i> {{ comment_count }}
-      </strong>
-    </div>
+  <div class="row" class="blog-goldword">
     <div class="col-12">
       <hr>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 card mb-4  mt-3 ">
-      <h3>Comments:</h3>
+      <h3 class="blog-goldword">Comments:</h3>
       <div>
         {% for comment in comments %}
         <div>>
-          <p>
+          <p class="blog-goldword">
             {{ comment.author }}
-            <span>
+            <br>
+            <span class="blog-goldword">
               {{ comment.created_on }}
-            </span> wrote:
+            </span> <br> wrote:
           </p>
-          <div id="comment{{ comment.id }}">
+          <div id="comment{{ comment.id }}" class="blog-blue" >
             {{ comment.body | linebreaks }}
           </div>
           {% if not comment.approved and comment.author == user %}
-          <p>
+          <p class="blog-goldword">
             Comment approval pending
           </p>
           {% endif %}
@@ -73,8 +69,8 @@
     <div class="col-md-4 card mb-4 mt-3">
       <div>
         {% if user.is_authenticated %}
-        <h3>Leave a comment:</h3>
-        <p>Posting as: {{ user.username }}</p>
+        <h3 class="blog-goldword">Leave a comment:</h3>
+        <p class="blog-goldword">Posting as: {{ user.username }}</p>
         <form id="commentForm" method="post">
           {{ comment_form | crispy }}
           {% csrf_token %}

@@ -8,11 +8,10 @@
                 {% for post in post_list %}
                 <div class="col-sm-4">
                 <a href="{% url 'post_detail' post.slug %}">
-                    <p>Author: {{ post.author }}</p>
-                    <h2 style="color:goldenrod !important;">{{ post.title }}</h2>
-                    <p>{{ post.excerpt | truncatewords:40 }}</p>
-                    <hr />
-                    <p>{{ post.created_on}}</p>
+                    <p class="blog-gold">Author: {{ post.author }}</p>
+                    <h2 class="blog-gold">{{ post.title }}</h2>
+                    <p class="blog-blue">{{ post.excerpt | truncatewords:40 }}</p>
+                    <p class="blog-gold">{{ post.created_on}}</p>
                     {% if forloop.counter|divisibleby:1 %}
                 </a>
                 </div>
@@ -23,7 +22,7 @@
 
         {% if is_paginated %}
         <nav aria-label="Page navigation">
-            <ul>
+            <ul class="blog-goldword">
                 {% if page_obj.has_previous %}
                 <li>
                     <a href="?page={{ page_obj.previous_page_number }}">&laquo; PREV</a>

@@ -10,16 +10,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+      <h3 class="blog-goldword">{% trans "Sign In" %}</h3>
 
-      <p>{% blocktrans %}Welcome back TEW enthusiasts. To interact on this blog, please log in. If you do not have an
-        account yet, then <a href="{{ signup_url }}">sign up here!</a>
+      <p class="blog-blue">{% blocktrans %}Welcome back TEW enthusiasts. To interact on this blog, please log in. If you do not have an
+        account yet, then <a class="blog-goldword" href="{{ signup_url }}">sign up here!</a>
         first.{% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <form  method="POST" action="{% url 'account_login' %}">
+      <form class="blog-blue" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}

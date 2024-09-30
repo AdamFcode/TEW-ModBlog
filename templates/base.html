@@ -21,37 +21,36 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body style="background-color: rgb(44, 44, 48)! important; color: black !important;">
+<body>
     <div class="container">
-        <div class="header clearfix" style="background-color:goldenrod !important;">
+        <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation" ><a class="{% if request.path == home_url %}active{% endif %}" 
-                            aria-current="page" href="{% url 'home' %}" style="color: black !important;">Home</a></li>
+                            aria-current="page" href="{% url 'home' %}">Home</a></li>
                     <li role="presentation"><a class="{% if request.path == link_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'link' %}" style="color: black !important;">Links</a></li>
+                            aria-current="page" href="{% url 'link' %}">Links</a></li>
                     {% if user.is_authenticated %}
                     <li role="presentation">
                         <a class="{% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}" style="color: black !important;">Logout</a>
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li role="presentation">
                         <a class="{% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}" style="color: black !important;">Register</a>
+                            href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li role="presentation">
                         <a class="{% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}" style="color: black !important;">Login</a>
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
             </nav>
-            <a style="color: black !important;" href="{% url 'home' %}">TEW IX Modblog</a>
+            <a href="{% url 'home' %}">TEW IX Modblog</a>
         </div>
 
-            <!--Style added inline to overide Bootstrap-->
-        <div class="jumbotron" style="background-color:goldenrod !important">
+        <div class="jumbotron">
             <h2>Welcome to the unofficial TEW IX Mod-Blog</h2>
             <img src="{% static 'images/tewix-image.webp' %}" alt="placeholder">
             <p class="lead">Browse our posts for installation guides and recent release.
@@ -60,8 +59,8 @@
             </p>
         </div>
 
-        <!--Container to display success message for commenting-->
-        <div class="container">
+        <!--Container to display notifications-->
+        <div class="container blog-goldword"
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     {% for message in messages %}
@@ -81,7 +80,7 @@
         </main>
     </div>
 
-    <footer class="footer" style="background-color:goldenrod !important">
+    <footer class="footer">
         <p>© 2024 AdamFcode</p>
     </footer>
 
