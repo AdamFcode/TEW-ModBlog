@@ -15,6 +15,11 @@ a {
   color: black;
 }
 
+.homeanc {
+  margin-block-start: .8em;
+  display: block;
+}
+
   /* Everything but the jumbotron gets side spacing for mobile first views */
   .header,
   .marketing,
@@ -39,6 +44,10 @@ a {
     background-color:goldenrod;
   }
 
+  .tewimg {
+    width: -webkit-fill-available;
+  }
+
   .blog-gold {
     background-color: goldenrod;
   }
@@ -55,6 +64,11 @@ a {
     padding-top: 10px;
     border-top: 1px solid #020202;
     background-color:goldenrod;
+  }
+
+  .formalign {
+    text-align: center;
+    list-style-position: inside;
   }
   
   /* Customize container for different screen sizes */

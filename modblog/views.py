@@ -14,7 +14,7 @@ class PostList(generic.ListView):
     """
     queryset = Post.objects.filter(status=1)
     template_name = "modblog/index.html"
-    paginate_by = 4
+    paginate_by = 3
 
 def post_detail(request, slug):
     """
