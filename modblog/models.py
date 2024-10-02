@@ -64,7 +64,7 @@ class Comment(models.Model):
     The Meta class orders the comments on the page
     """
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["-created_on"]
 
     """
     The __str__ method allows the comments to be read with an indication of content
