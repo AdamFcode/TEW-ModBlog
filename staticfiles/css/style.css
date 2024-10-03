@@ -48,10 +48,11 @@ a {
   background-color: goldenrod;
 }
 
-/*Properly position image in div*/
+/*Properly position image in div resizing for mobile only*/
+@media screen and (max-width: 320px) {
 .tewimg {
   width: -webkit-fill-available;
-}
+}}
 
 /*Set Gold background for specific headings*/
 .blog-gold {
