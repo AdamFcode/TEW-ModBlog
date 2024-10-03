@@ -5,6 +5,7 @@
 <div class="masthead">
   <div class="container">
     <div class="row g-0">
+      <!--Displays post headings such as title, author, mod-maker and date of upload-->
       <div class="col-md-6 masthead-text">
         <h1 class="blog-goldword">{{ post.title }}</h1>
         <p class="blog-goldword">Author: {{ post.author }}</p>
@@ -17,6 +18,7 @@
 
 <div class="container">
   <div class="row blog-blue">
+    <!--Provides the main body content of the post-->
     <div class="col card mb-4  mt-3 left  top">
       <div>
         <p>
@@ -37,6 +39,7 @@
       <h3 class="blog-goldword">Comments:</h3>
       <div>
         {% for comment in comments %}
+        <!--Displays the associated comments-->
         <div>>
           <p class="blog-goldword">
             {{ comment.author }}
@@ -52,6 +55,7 @@
             {{ comment.body | linebreaks }}
           </div>
           {% if not comment.approved and comment.author == user %}
+          <!--Notice for user if their comment is pending approval-->
           <p class="blog-goldword">
             Comment approval pending
           </p>
@@ -115,5 +119,6 @@
 {% endblock modpost %}
 
 {% block jscomment %}
+<!--Script loaded to aid in proper presentation of Bootstrap Modal-->
 <script src="{% static 'js/comments.js' %}" type="module"></script>
 {% endblock %}
