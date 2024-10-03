@@ -69,6 +69,12 @@ a {
   color: royalblue;
 }
 
+/*Centre Next/Pev buttons*/
+.butcenter {
+  display: block;
+  text-align: center;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 10px;
