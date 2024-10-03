@@ -1,136 +1,147 @@
 /* Space out the content*/
 body {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    height: 100vh;
-    background-color: rgb(44, 44, 48);
-    color: black;
-  }
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 100vh;
+  background-color: rgb(44, 44, 48);
+  color: black;
+}
 
-  .header {
-    color: black !important;
-  }
+/*Set text colour for header and anchor content*/
+.header {
+  color: black !important;
+}
 
 a {
   color: black;
 }
 
+/*Position anchor tag at top of homepage*/
 .homeanc {
   margin-block-start: .8em;
   display: block;
 }
 
-  /* Everything but the jumbotron gets side spacing for mobile first views */
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page headers */
+.header {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: goldenrod
+}
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/*Set background colour for jumbotron heading*/
+.jumbotron {
+  background-color: goldenrod;
+}
+
+/*Properly position image in div*/
+.tewimg {
+  width: -webkit-fill-available;
+}
+
+/*Set Gold background for specific headings*/
+.blog-gold {
+  background-color: goldenrod;
+}
+
+/*Set text colour to Gold for most headings*/
+.blog-goldword {
+  color: goldenrod;
+}
+
+/*Set text color to blue for most post content*/
+.blog-blue {
+  color: royalblue;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 10px;
+  border-top: 1px solid #020202;
+  background-color: goldenrod;
+}
+
+/*Center Sing up, Sign in and Register forms*/
+.formalign {
+  text-align: center;
+  list-style-position: inside;
+}
+
+/* Customize container for different screen sizes */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+.container-narrow>hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+
+.marketing p+h4 {
+  margin-top: 28px;
+}
+
+
+/* Changes opacity of delete Modal */
+.fade:not(.show) {
+  opacity: 50;
+}
+
+/* Responsivity for larger screens*/
+@media screen and (min-width: 768px) {
+
   .header,
   .marketing,
   .footer {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 35px;
+    padding-left: 35px;
   }
-  
-  /* Custom page header */
+
   .header {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #e5e5e5;
-    background-color:goldenrod
-  }
-  .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px; 
+    margin-bottom: 30px;
   }
 
   .jumbotron {
-    background-color:goldenrod;
+    border-bottom: 0;
   }
-
-  .tewimg {
-    width: -webkit-fill-available;
-  }
-
-  .blog-gold {
-    background-color: goldenrod;
-  }
-
-  .blog-goldword {
-    color: goldenrod;
-  }
-  
-  .blog-blue {
-    color: royalblue;
-  }
-  /* Custom page footer */
-  .footer {
-    padding-top: 10px;
-    border-top: 1px solid #020202;
-    background-color:goldenrod;
-  }
-
-  .formalign {
-    text-align: center;
-    list-style-position: inside;
-  }
-  
-  /* Customize container for different screen sizes */
-  @media (min-width: 768px) {
-    .container {
-      max-width: 730px;
-    }
-  }
-  .container-narrow > hr {
-    margin: 30px 0;
-  }
-  
-  /* Main marketing message */
-  .jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-  }
-  
-  /* Supporting marketing content */
-  .marketing {
-    margin: 40px 0;
-  }
-  .marketing p + h4 {
-    margin-top: 28px;
-  }
-
-
-  /* Changes opacity of delete Modal */
-    .fade:not(.show) {
-    opacity: 50;
 }
-  
-  /* Responsivity for larger screens*/
-  @media screen and (min-width: 768px) {
-    .header,
-    .marketing,
-    .footer {
-      padding-right: 35px;
-      padding-left: 35px;
-    }
-    .header {
-      margin-bottom: 30px;
-    }
-    .jumbotron {
-      border-bottom: 0;
-    }
+
+@media screen and (min-width: 1024px) {
+  .marketing {
+    padding-right: 85px;
+    padding-left: 85px;
   }
+}
 
-  @media screen and (min-width: 1024px) {
-    .marketing {
-      padding-right: 85px;
-      padding-left: 85px;
-    }
+@media screen and (min-width: 1366px) {
+  .marketing {
+    padding-right: 170px;
+    padding-left: 170px;
   }
-
-  @media screen and (min-width: 1366px) {
-    .marketing {
-      padding-right: 170px;
-      padding-left: 170px;
-    }
-  }
-  
-
-
-  
+}
