@@ -89,3 +89,8 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'Error. Please try again')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+"""View for Custom Error 404"""
+def error_404(request, exception):
+    return render(request, 'modblog/templates/404.html', status=404)

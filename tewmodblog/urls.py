@@ -24,3 +24,5 @@ urlpatterns = [
     path("link/", include('link.urls'), name='link-urls'),
     path("", include("modblog.urls"), name="modblog-urls"),
 ]
+
+handler404 = 'modblog.views.error_404'
