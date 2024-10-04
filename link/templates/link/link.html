@@ -4,16 +4,13 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-4 text-center">
-            <img src="" width="" />
-        </div>
         <div class="col-8">
-            <h1 class="blog-goldword">Below are several links to relevant, trusted websites. Please refrain from directly linking to these or
+            <h2 class="blog-goldword">Below are several links to relevant, trusted websites. Please refrain from directly linking to these or
                 any other sites in blog posts. Clicking the title will open the website in a new window.
-            </h1>
+            </h2>
             {% for link in link %}
             <!-- URL goes between these h2 tags-->
-            <h2> <a class="blog-goldword" href="{{ link.site_url}}" target="_blank">{{ link.title }}</a></h2>
+            <h3> <a class="blog-goldword butcenter" href="{{ link.site_url}}" target="_blank">{{ link.title }}</a></h3>
             <hr>
             <!-- Content goes directly underneath this -->
             <h4 class="blog-blue"> {{ link.content | safe }}</h4>
