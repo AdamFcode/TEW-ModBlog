@@ -7,14 +7,14 @@
 {% block modpost %}
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="butcenter">
             <h3 class="blog-goldword">{% trans "Sign Out" %}</h3>
 
             <p class="blog-blue">{% trans 'Are you sure you want to sign out?' %}</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="butcenter">
 
             <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
