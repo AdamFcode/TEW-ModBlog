@@ -54,8 +54,32 @@ Text was originally presented using a Royal Blue, similar to the text colour use
 ## Database Schema
 ![Database Diagram](static/readmeimg/modblog-erd.webp)
 
+# Technologies and Languages Used
+The following were used for this project:
+- HTML5
+
+- CSS3
+
+- JavaScript
+
+- Python
+
+- Django
+
+-  PostgreSQL
+
+-  Bootstrap3
+
+-  Heroku
+
+-  Gunicorn
+
+-  Whitenoise
+
+-  Psycopg2-Binary
+
 # Features
-* Note: As noted above in Colour Scheme and below in Testing, the text colour for the website was changed from royal blue to white late in development for the sake of readability. As a result of project deadlines, the following images showcase the original text colour. The change can be seen in the live deployment of the website but unfortunately there was not enough time to capture and upload new images showcasing this change.
+* Note: As noted above in Colour Scheme, the text colour for the website was changed from royal blue to white late in development for the sake of readability. As a result of project deadlines, the following images showcase the original text colour. The change can be seen in the live deployment of the website but unfortunately there was not enough time to capture and upload new images showcasing this change.
   
 ## Navbar
 The top of the website has a navbar to allow easy navigation of the site. It includes an anchor for the homepage, titled as TEW IX Modblog. The navigational links change depending on the login status of the user. 'Blog' and 'Links' appear regardless of login status. Should the user not be logged in, they're are presented with 'Signup' and 'Login'. If the user is already logged in, these two options are replaced with 'Logout'.
@@ -162,11 +186,221 @@ A simple, themeatically consistent footer was decided upon, displaying only the 
 ![Footer](static/readmeimg/26-footer.webp)
 
 # Features Earmarked for Future Implementation 
+## User Blog Posts
+The implementation of a model that would allow users to post their own blogs was considered but ultimately decided against at this stage of development. The reason for this was the unproven community of the blog. Once a genuine community of TEW enthusiasts is built that can be relied upon to post relevant content, the feature will be implemented.
+
+## Unbanning of Links
+Allowing users to comment links without fear of removal is understood to be more ideal than navigating to the links site and finding the domain a commentator may have mentioned. However, this was decided against for the current build until, once again, a reliable community who will not troll the blog posts has been built up.
+
+## Multiple Blog Sections
+A feature that could not be implemented in the allotted time was seperate blog sections that dealt with different aspects of the game. For instance, one section for mod releases, another for tech updates, another for general discussion etc. This is one of the primary focuses of future development and will be better suited to the website once users have the ability to post their own blogs.
+
+## User Profile
+A user profile section to increase the interactivity between users was considered but deemed unable to complete within the timeframe allotted to the project. Future builds will implement this feature in order to increase user engagement.
+
+## Comment Approval Notification
+Once a user profile section has been implemented, the intention is to provide an internal inbox for each user where they will receive updates on their comment status from admin. Supported messaging between users was considered in conjunction with this future feature but decided against as it was deemed unneccesary.
 
 # Testing
+## User Stories
+As a user I want to easily and intuitively navigate the website
+- The navbar works perfectly as intended and displays the correct options dependant on user status.
+<hr>
+
+As a user I want to register for an account so I can contribute
+- The register link on the navbar directs the user to a form which provides guidance and input fields for registering.
+- Any incorrect information is brough to the users attention and they receive a notification upon successful registration.
+- Once registered, the user has the ability to post comments under the blog posts.
+<hr>
+
+As a user I want to have control over my contributions
+- The user is given the option to edit or remove his comments.
+- The user is asked to confirm whether they intended to edit or delete their comment.
+- The user is notified of successful or failed attempts to edit or delete their comment.
+<hr>
+
+As a user I want to logout and Login with ease
+- The navbar provides intuitive navigation to the relevant sections.
+- Login attempts provide a form with clear instructions.
+- Logout asks the user to confirm whether their logging out.
+- The user is notified of successful or failed attempts to login or logout.
+<hr>
+
+As a user I want to understand each posts intention without clicking into it
+- The user can view a selection of blog posts from the homepage.
+- Each blog post provides a title and excerpt to indicate what the content is about.
+- The posts are presented in order of most recently posted
+<hr>
+
+As a user I want to click into and view any post that I'm interested in.  
+- Each truncated blog post has a title which leads to the actual post if clicked.
+- The user is successfully redirected to whichever post they click on.
+<hr>
+
+As a user I want to browse a set of resources related to the website
+- Clicking links in the navbar redirects the user to a list of relevant resources.
+- Each resource has a short description of the website's functionality and relevancy.
+- Clicking on the title opens the selected website in a new tab.
+
+## Manual Testing
+### Navigation
+**Task**: Navigate website
+
+**Steps**: Selected each option along the navbar from every app to ensure that they led to the intended pages.
+
+**Status**: Success.
+<hr>
+
+### Registration
+**Task**: Register as User
+
+**Steps**: Clicked on Signup in navbar. Filled out the form following the guidelines and was presented with a notification confirming my registration. 
+
+**Status**: Success
+<hr>
+
+### Logout
+**Task**: Logout successfully 
+
+**Steps**: Clicked on logout in navabar. Presented with confirmation button. Upon clicking on button, redirected to homepage and given notification to confirm logout. Could no longer comment.
+
+**Status**: Success
+<hr>
+
+### Login
+**Task**: Login successfully 
+
+**Steps**: Clicked on login in navbar. Filled out form with relevant information. Was redirected to homepage and notified of successful login. Could comment as logged in user.
+
+**Status**: Success
+<hr>
+
+### Comment
+**Task**: Leave a comment
+
+**Steps**: Entered comment into provided text field. Clicked submit. Received notification confirming comment submission with approval pending advised.
+
+**Status**: Success
+<hr>
+
+### Edit Comment
+**Task**: Edit a comment
+
+**Steps**: Navigated to comment left prior and clicked the edit button. Textfield was populated with my current comment and allowed me to make changes. Submit button was replaced with update button. Once clicked, received a notification confirming the update. Checked the comment section and verified the change on different profile.
+
+**Status**: Success
+<hr>
+
+### Delete Comment 
+**Task**: Delete a comment
+
+**Steps**: Navigated to comment left prior and clicked the delete button. Presented with modal confirming selection. Received notification to confirm comment had been deleted once I clicked the button. Checked the comment section and verified deletion on different profile.
+
+**Status**: Success
+<hr>
+
+### Links
+**Task**: Navigate to relevant website from links section
+
+**Steps**: Navigated to link section of website. Clicked each header, ensuring that it brought the user to the listed website. Also ensured the links opened in new tabs.
+
+**Status**: Success
+
+## Validator Testing
+The HTML was tested on the official W3C Validator and passed for most files.
+![HTML validation](static/readmeimg/html-index-validate.webp)
+
+The link.html document returned errors due to p tags being a child element of a h4 tag. However, as this information was populated by the model and the validation was done later in project development, the issue could not be resolved.
+
+![Link Exception](static/readmeimg/link-exceptions.webp)
+
+The Sign Up form also returned errors but these could not be addressed as it was populated by an outside resource.
+
+![Signup Exceptions](static/readmeimg/signup-exceptions.webp)
+
+<hr>
+
+The CSS was tested on the official Jigsaw Validator and showed no errors.
+![CSS validation](static/readmeimg/css-validate.webp)
+
+<hr>
+
+The JavaScript was tested on jshint and showed no errors.
+![JavaScript validation](static/readmeimg/jshint.webp)
+
+<hr>
+
+The python was tested on CI Pylint and showed no errors.
+![Python validation](static/readmeimg/py-blog-admin.webp)
+![Python validation](static/readmeimg/py-blog-apps.webp)
+![Python validation](static/readmeimg/py-blog-forms.webp)
+![Python validation](static/readmeimg/py-blog-models.webp)
+![Python validation](static/readmeimg/py-blog-urls.webp)
+![Python validation](static/readmeimg/py-blog-views.webp)
+![Python validation](static/readmeimg/py-link-admin.webp)
+![Python validation](static/readmeimg/py-link-apps.webp)
+![Python validation](static/readmeimg/py-link-model.webp)
+![Python validation](static/readmeimg/py-link-urls.webp)
+![Python validation](static/readmeimg/py-link-views.webp)
+![Python validation](static/readmeimg/py-tewmodblog-urls.webp)
+
+## Lighthouse Testing
+The testing on both desktop and mobile returned satisfactory scores
+
+Desktop:
+
+![Desktop Lighthouse](static/readmeimg/lighthouse-desktop.webp)
+
+Mobile:
+
+![Desktop Mobile](static/readmeimg/lighthouse-mobile.webp)
 
 # Bugs
+## Resolved Bugs
+### Delete Modal
+Much of the troubleshooting for this project was concerned with the delete modal for the comment section. The modal appeared and the delete button within worked properly but the issue was with the close button within the modal. Once clicked, the close button did not remove the modal. The website would have to be reloaded in order to get rid of it.
+
+After several unsuccessful attempts to fix it by troubleshooting on stackoverflow, it was decided to place a function in the script of the base html file that manually provided the functionality of closing the modal when the close button was clicked.
+
+### CSS Issues
+A relatively minor and easily fixed issue presented itself where my custom css was not overwriting the bootstrap css classes provided in the Jumbotron Narrow template.
+
+Luckily, I found many posts online addressing similar issues and through trial and error managed to correct the issue by properly loading the static files into the effected html files.
+
+## Unresolved Bugs
+### Error 404 Page
+A custom error 404 page was implemented for the project which now instead renders a basic service error 500 message. The custom error page was confirmed by the programmer when implemented but must have lost functionality when other code was implemented. Due to debug being set to true, the bug was not discovered until late in development and could not be corrected.
+
+### Navbar on Mobile
+When viewed on a mobile, the elements in the navbar stack in awkward manner and remove the grey space between the navbar and the jumbotron. This issue occured when the wording used in the navbar was changed and when slight changes were implemented to the css. Due to the project deadline the issue could not be fixed.
 
 # Deployment
+The project was deployed to Heroku using GitHub as a repository.
+Deployment required an Heroku account to host the app. Once an account was created, the following steps were followed:
+* From the Heroku dashboard, select new in the upper right corner, followed by create new app.
+* Enter an appropriate app name and select region, which was EU in this case.
+* Select Create New App
+* Under settings, select Reveal Config Vars. Enter PORT as a key with 8000 as the value and then add.
+* Return to deployment and select deployment method which was GitHub in this case.
+* Enter the relevant repository source and connect.
+* Select deploy from branch which provided a landing page on Heroku for your app.
+* In the top right, select "Open App" to launch in a new window
 
 # Credits 
+## Content
+- The code used for Pagination, the navbar and the comment form was sourced from the I Think Therefore I Blog walkthrough project.
+- The Bootstrap3 Jumbotron Narrow template was used and modified for CSS elements
+- All blog and comment content was written by the programmer.
+
+## Media
+- The inset picture within the jumbotron was sourced from the GDS forums.
+- Tinypng was used to compress the readme images
+
+## Special Thanks
+- Tutors, mentors, classmates et al at Code Institute
+- Adam Ryland
+- GreyDog Software
+- The TEW community and modders
+- The community at stackoverflow
+
+
