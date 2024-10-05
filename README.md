@@ -135,7 +135,33 @@ If the user confirms the deletion, the comment will be removed and they will be 
 ![Delete Notification](static/readmeimg/20-deletesuccess.webp)
 
 ## Signing Out
+The Logout option provides the user with a sign out button. This extra step was added to ensure that any user who accidentally clicked the Logout button does not have to then go through the process of signing in again.
 
+![Logout Confirm](static/readmeimg/21-signout.webp)
+
+If this button is clicked, the user is signed out, provided with a message to confirm this and the navbar gets reset to the state any unregistered user is presented with.
+
+![Logout Success](static/readmeimg/22-signoutsuccess.webp)
+
+## Signing In
+When a user returns and clicks on the Login button, they will be redirected to a form requesting their user details.
+
+![Sing In](static/readmeimg/23-signin.webp)
+
+If incorrect information is entered, the user is presented with a message informing them that their username/password is invalid.
+
+![Sign In incorrect](static/readmeimg/24-signinincorrect.webp)
+
+Once the user has entered the correct information, they are redirected to the Blog Posts page and given a notification confirming their successful sign in.
+
+![Sign In Success](static/readmeimg/25-signinsuccess.webp)
+
+## Footer
+A simple, themeatically consistent footer was decided upon, displaying only the name of the programmer. 
+
+![Footer](static/readmeimg/26-footer.webp)
+
+# Features Earmarked for Future Implementation 
 
 # Testing
 
