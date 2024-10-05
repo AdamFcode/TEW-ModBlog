@@ -55,6 +55,87 @@ Text was originally presented using a Royal Blue, similar to the text colour use
 ![Database Diagram](static/readmeimg/modblog-erd.webp)
 
 # Features
+* Note: As noted above in Colour Scheme and below in Testing, the text colour for the website was changed from royal blue to white late in development for the sake of readability. As a result of project deadlines, the following images showcase the original text colour. The change can be seen in the live deployment of the website but unfortunately there was not enough time to capture and upload new images showcasing this change.
+  
+## Navbar
+The top of the website has a navbar to allow easy navigation of the site. It includes an anchor for the homepage, titled as TEW IX Modblog. The navigational links change depending on the login status of the user. 'Blog' and 'Links' appear regardless of login status. Should the user not be logged in, they're are presented with 'Signup' and 'Login'. If the user is already logged in, these two options are replaced with 'Logout'.
+
+* Note, the 'Blog' navigation was initially listed as 'Home'. The project mentor recommended that this be changed as the Home Page serves as the Blog Posts page and it led to confusion when navigating the website. As this was pointed out late in development, the below image showcases the original 'Home' navigation, though this change has been made on the deployed website. The same is true of the 'Signup' navigation, which initially read 'Register'.
+
+![Navbar](static/readmeimg/2-navbar.webp)
+
+## Jumbotron
+A jumbotron sitting at the top of each page provides a description of the website's intent along with an inset image of TEW IX's main-menu image. It also recommends that users either Signup or Sign in  to leave a comment. 
+
+![Jumbotron](static/readmeimg/3-jumbotron.webp)
+
+## Blog Preview
+Below the jumbotron on the 'Blog' homepage, three blog post previews are presented. These previews provide the title, author, upload date and a truncated excerpt of the blog content, allowing the user to see whether the specific blog post is of any interest to them.
+
+![Blog Preview](static/readmeimg/3.5-blogtitle.webp)
+
+## Blog Post Pagination
+Three preview blog posts are displayed to the user, deemed the ideal amount before the page became overly cluttered. Below these posts is a 'next' button to allow the user to scroll through different blog posts. Once clicked, a 'previous' button appears allowing the user to scroll back the way they came. Should they reach the last page, the next button is then hidden.
+
+![Blog Next](static/readmeimg/4-posts1.webp)
+![Blog Prev](static/readmeimg/5-posts2.webp)
+
+## Singular Blog Post
+Upon clicking on the desired post, the user is shown the full post complete with a comment section below. The post also lists the GDS username of the individual or individuals who made the associated mod. The users login status dictates what functionality is presented to them in the comment section (covered further down).
+
+![Blog Post](static/readmeimg/6-singlepost.webp)
+![Comment Section](static/readmeimg/7-commentsection.webp)
+
+## Links Section
+Hoping to curtail any unrelated links from being commented on the website, a ban against any links whatsoever has been instigated, with a dedicated section open to users to navigate off-site to related, trusted domains. This was done via a Model so that the SuperUser can change these links through the admin panel. These links have titles that lead to the listed website when clicked upon and a short description of the site in question.
+
+![Links](static/readmeimg/8-links.webp)
+
+## Signup
+Signing up for the website is easy, with a form given to the user to fill out before being submitted. This form captures basic information with the email section being optional. 
+
+![Signup](static/readmeimg/10-signupfill.webp)
+
+Should the user input incorrect information, they receive a feedback message which lets them know that a mistake has been made.
+
+![Signup Incorrect](static/readmeimg/11-signupincorrect.webp)
+
+Upon signing up successfully, a mesage is related to the User to inform them that they are now signed into the website under their chosen username.
+
+![Signup Success](static/readmeimg/12-signupsuccess.webp)
+
+## Comments 
+Once signed in, a textfield appears beside the comments section of each blog post, allowing the user to leave a comment if they wish. These comments require approval in the admin panel in order to moderate content.
+
+![Comment Field](static/readmeimg/13-commentbox.webp)
+
+Should the user decide to leave a comment, they receive a message to confim their comment submission and to inform them that they're awaiting approval.
+
+![Comment Notification](static/readmeimg/14-commentsuccess.webp)
+
+Once a comment is aprroved it can be seen by all. The user is also presented with two buttons below their comment; one to edit their comment and the other to delete it.
+
+![Comment Buttons](static/readmeimg/15-commentbutton.webp)
+
+Should they click the edit button, the comment textfield becomes auto-populated with their current comment, allowing them to edit it. The submit button is also replaced with an update button.
+
+![Comment Edit](static/readmeimg/16-commentedit.webp)
+
+Upon clicking update, the user is presented with an update success message and, as seen below, their comment is updated to the current state.
+
+![Update notification](static/readmeimg/17-updatesuccess.webp)
+![Updated Comment](static/readmeimg/18-editedcomment.webp)
+
+Should the user decided to delete their comment, they can click the delete button. This will bring up a modal for them to confirm whether they want to delete their comment or not. Should they close the modal, their comment will remain untouched.
+
+![Delete Confirm](static/readmeimg/19-commentdelete.webp)
+
+If the user confirms the deletion, the comment will be removed and they will be given a notification informing them of the successful deletion.
+
+![Delete Notification](static/readmeimg/20-deletesuccess.webp)
+
+## Signing Out
+
 
 # Testing
 
