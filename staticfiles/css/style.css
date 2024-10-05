@@ -54,6 +54,14 @@ a {
   width: -webkit-fill-available;
 }}
 
+/*Resize main conetent*/
+.marginbox {   
+margin-top: 5px;
+margin-right: 0px;
+margin-bottom: 40px;
+margin-left: 0px;
+}
+
 /*Set Gold background for specific headings*/
 .blog-gold {
   background-color: goldenrod;
@@ -66,7 +74,7 @@ a {
 
 /*Set text color to blue for most post content*/
 .blog-blue {
-  color: royalblue;
+  color: white;
 }
 
 /*Centre Next/Pev buttons*/

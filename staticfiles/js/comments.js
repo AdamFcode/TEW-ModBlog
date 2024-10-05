@@ -10,7 +10,6 @@ const submitButton = document.getElementById("submitButton");
 /*Declare constants for delete function*/
 const deleteModal = window.$('#deleteModal').modal();
 const deleteButtons = document.getElementsByClassName("delete-button");
-const closeModal = document.getElementById('closeModal');
 const deleteConfirm = document.getElementById("deleteConfirm");
 
 
